@@ -1,0 +1,397 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Arima Madurai', cursive;
+    user-select: none;
+}
+
+body, html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.scores {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.scores span {
+    color: #555;
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 2;
+    display: block;
+    text-align: center;
+}
+
+.games {
+    min-height: 350px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.games .game-user, .games .game-computer {
+    width: 450px;
+    text-align: left;
+    background-position: center;
+    background-size: 50px;
+}
+
+.game-user img, .game-computer img {
+    width: 100%;
+    transform-origin: left;
+}
+
+.game-computer {
+    transform: rotateX(180deg);
+    transform: rotateY(180deg);
+}
+
+.games .round {
+    min-width: 200px;
+    padding: 15px 0px;
+    margin: 0px 15px;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+    margin: 0px 25px;
+}
+
+.games .round>span {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: rgb(155, 55, 55);
+}
+
+.choices {
+    width: 310px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.choices .choice {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(155, 55, 55);
+    cursor: pointer;
+}
+
+@keyframes animate {
+    25% {
+        transform: rotate(-15deg);
+    }
+    50% {
+        transform: rotate(15deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@media (max-width: 1200px) {
+    .scores span {
+        font-size: 2.1rem;
+    }
+    .games .game-user, .games .game-computer {
+        width: 410px;
+    }
+    .games .round>span {
+        font-size: 1.7rem;
+    }
+    .choices {
+        width: 310px;
+        height: 80px;
+    }
+    .choices .choice {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .scores span {
+        font-size: 2rem;
+    }
+    .games .game-user, .games .game-computer {
+        width: 380px;
+    }
+    .games .round>span {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 1050px) {
+    .games .round {
+        min-width: 170px;
+        margin: 0px 19px;
+    }
+    .games .game-user, .games .game-computer {
+        width: 350px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .scores span {
+        font-size: 1.7rem;
+    }
+    .games .game-user, .games .game-computer {
+        width: 410px;
+    }
+    .games .round {
+        min-width: 180px;
+        margin: 0px 17px;
+    }
+    .games .round>span {
+        font-size: 1.4rem;
+    }
+    .games .game-user, .games .game-computer {
+        width: 300px;
+    }
+    .choices {
+        width: 310px;
+        height: 60px;
+    }
+    .choices .choice {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 880px) {
+    .scores span {
+        font-size: 1.7rem;
+    }
+    .games .game-user, .games .game-computer {
+        width: 410px;
+    }
+    .games .round {
+        min-width: 150px;
+        margin: 0px 15px;
+    }
+    .games .round>span {
+        font-size: 1.4rem;
+    }
+    .games .game-user, .games .game-computer {
+        width: 300px;
+    }
+    .choices {
+        width: 310px;
+        height: 60px;
+    }
+    .choices .choice {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 780px) {
+    .scores span {
+        font-size: 1.5rem;
+    }
+    .games {
+        min-height: 300px;
+    }
+    .games .game-user, .games .game-computer {
+        width: 410px;
+    }
+    .games .round {
+        min-width: 130px;
+        margin: 0px 15px;
+    }
+    .games .round>span {
+        font-size: 1.2rem;
+    }
+    .games .game-user, .games .game-computer {
+        width: 280px;
+    }
+    .choices {
+        width: 310px;
+        height: 60px;
+    }
+    .choices .choice {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-height: 500px) {
+    
+    .scores span {
+        color: #555;
+        font-size: 1.4rem;
+        line-height: 1.8;
+        display: block;
+        text-align: center;
+    }
+    .games {
+        min-height: 230px;
+    }
+    .games .game-user, .games .game-computer {
+        width: 280px;
+        text-align: left;
+        background-position: center;
+        background-size: 50px;
+    }
+    .game-user img, .game-computer img {
+        width: 100%;
+        transform-origin: left;
+    }
+    .games .round {
+        min-width: 110px;
+        padding: 8px 0px;
+        margin: 0px 15px;
+    }
+    .games .round>span {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: rgb(155, 55, 55);
+    }
+    .choices {
+        width: 50%;
+        height: 70px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .choices .choice {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: rgb(155, 55, 55);
+        cursor: pointer;
+    }
+}
+
+@media (max-height: 400px) {
+    
+    .scores span {
+        color: #555;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        display: block;
+        text-align: center;
+    }
+    .games {
+        min-height: 200px;
+    }
+    .games .game-user, .games .game-computer {
+        width: 260px;
+        text-align: left;
+    }
+    .games .round {
+        min-width: 110px;
+        padding: 5px 0px;
+        margin: 0px 15px;
+    }
+    .games .round>span {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: rgb(155, 55, 55);
+    }
+    .choices {
+        width: 50%;
+        height: 70px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .choices .choice {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgb(155, 55, 55);
+        cursor: pointer;
+    }
+}
+
+@media (max-height: 350px) {
+    
+    .games {
+        min-height: 180px;
+    }
+    .games .game-user, .games .game-computer {
+        width: 250px;
+        text-align: left;
+    }
+    
+    .games .round {
+        min-width: 110px;
+        padding: 5px 0px;
+        margin: 0px 15px;
+    }
+    .games .round>span {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: rgb(155, 55, 55);
+    }
+    .choices {
+        width: 50%;
+        height: 60px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .choices .choice {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: rgb(155, 55, 55);
+        cursor: pointer;
+    }
+}
+
+@media (max-height: 300px) {
+    
+    .games {
+        min-height: 170px;
+    }
+    .games .game-user, .games .game-computer {
+        width: 240px;
+        text-align: left;
+    }
+    
+    .games .round {
+        min-width: 100px;
+    }
+    .games .round>span {
+        font-size: 1rem;
+    }
+    .choices {
+        width: 50%;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .choices .choice {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: rgb(155, 55, 55);
+        cursor: pointer;
+    }
+}
